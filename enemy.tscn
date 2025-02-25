@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ihm7red1msxb"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_vw70f"]
+[ext_resource type="Texture2D" uid="uid://dt5563adcffr3" path="res://PNG/Enemies/enemyFloating_2.png" id="2_4ydhs"]
+
+[node name="enemy" type="StaticBody2D"]
+z_index = 4
+position = Vector2(844, 558)
+script = ExtResource("1_vw70f")
+metadata/_edit_group_ = true
+
+[node name="EnemyFloating2" type="Sprite2D" parent="."]
+position = Vector2(6.10352e-05, 0)
+scale = Vector2(0.827273, 0.790909)
+texture = ExtResource("2_4ydhs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(6.10352e-05, 0)
+scale = Vector2(0.827273, 0.790909)
+polygon = PackedVector2Array(5.5, -27.5, -6.5, -27.5, -6.5, -24, -9.3, -18.5, -15.3, -18.5, -19.5, -14.3, -19.5, -7, -26.8, -4.5, -27.5, -4.5, -27.5, 6.5, -20.8, 8.5, -19.5, 8.5, -19.5, 15.3, -15.3, 19.5, -7.9, 19.5, -6.5, 23.8, -6.5, 27.5, 5.5, 27.5, 7.5, 20.8, 7.5, 19.5, 14.3, 19.5, 18.5, 15.3, 18.5, 8.9, 24.9, 6.5, 27.5, 6.5, 27.5, -4.7, 19.9, -7.5, 18.5, -7.5, 18.5, -14.3, 14.3, -18.5, 7.8, -18.5, 5.5, -23.9)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(6.10352e-05, 0)
+scale = Vector2(0.827273, 0.790909)
+polygon = PackedVector2Array(5.5, -27.5, -6.5, -27.5, -6.5, -24, -9.3, -18.5, -15.3, -18.5, -19.5, -14.3, -19.5, -7, -26.8, -4.5, -27.5, -4.5, -27.5, 6.5, -20.8, 8.5, -19.5, 8.5, -19.5, 15.3, -15.3, 19.5, -7.9, 19.5, -6.5, 23.8, -6.5, 27.5, 5.5, 27.5, 7.5, 20.8, 7.5, 19.5, 14.3, 19.5, 18.5, 15.3, 18.5, 8.9, 24.9, 6.5, 27.5, 6.5, 27.5, -4.7, 19.9, -7.5, 18.5, -7.5, 18.5, -14.3, 14.3, -18.5, 7.8, -18.5, 5.5, -23.9)

@@ -1,0 +1,495 @@
+[gd_scene load_steps=32 format=3 uid="uid://tscrht4c8q54"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_q1mcn"]
+[ext_resource type="Texture2D" uid="uid://76bp1ftxj8j3" path="res://PNG/Backgrounds/set2_background.png" id="1_xt4oa"]
+[ext_resource type="Texture2D" uid="uid://b2tmehx1ev2wu" path="res://PNG/Backgrounds/set4_hills.png" id="2_br5ra"]
+[ext_resource type="Texture2D" uid="uid://cby3yoj4wefsp" path="res://PNG/Backgrounds/set4_tiles.png" id="3_m813y"]
+[ext_resource type="Texture2D" uid="uid://b8c5olmcon6s1" path="res://PNG/Backgrounds/set3_tiles.png" id="4_unv2r"]
+[ext_resource type="Texture2D" uid="uid://blp0u4kg6iqjj" path="res://PNG/Backgrounds/set3_hills.png" id="5_ue6su"]
+[ext_resource type="Texture2D" uid="uid://bjwgx6yrvfglu" path="res://PNG/Backgrounds/set1_hills.png" id="6_2lrmg"]
+[ext_resource type="Texture2D" uid="uid://b8p8yeqdo4a4d" path="res://PNG/Backgrounds/set1_tiles.png" id="7_aa7px"]
+[ext_resource type="Texture2D" uid="uid://c2vjp5i40a87l" path="res://PNG/Players/Player Red/playerRed_dead.png" id="7_uw1ho"]
+[ext_resource type="Script" path="res://player.gd" id="8_rmp1w"]
+[ext_resource type="Script" path="res://floor.gd" id="10_wp6oj"]
+[ext_resource type="Texture2D" uid="uid://d07wp2mhte8xl" path="res://PNG/Tiles/Blue tiles/tileBlue_05.png" id="10_yl4sw"]
+[ext_resource type="Texture2D" uid="uid://chkec5cy1ssvr" path="res://PNG/Tiles/Brown tiles/tileBrown_02.png" id="11_s7kq3"]
+[ext_resource type="Texture2D" uid="uid://dqa2pcfp27mei" path="res://PNG/Tiles/Green tiles/tileGreen_05.png" id="12_86083"]
+[ext_resource type="Texture2D" uid="uid://21xmxwcib6iq" path="res://PNG/Tiles/Yellow tiles/tileYellow_06.png" id="13_wf57c"]
+[ext_resource type="Texture2D" uid="uid://bsetwfob0qjps" path="res://PNG/Other/plantRed_1.png" id="16_svv05"]
+[ext_resource type="Texture2D" uid="uid://boy8jxigqigqe" path="res://PNG/Other/plantRed_4.png" id="17_xl0sy"]
+[ext_resource type="Texture2D" uid="uid://ijwqvqgqq40x" path="res://PNG/Other/plantRed_6.png" id="18_g6clm"]
+[ext_resource type="Texture2D" uid="uid://cy6nt4jvhe47q" path="res://PNG/Other/plantTop_blue.png" id="19_5mkif"]
+[ext_resource type="Texture2D" uid="uid://droxxog2x5vqh" path="res://PNG/Other/plantGreen_4.png" id="20_rrmyv"]
+[ext_resource type="Texture2D" uid="uid://frin52hy6mbu" path="res://PNG/Other/plantGreen_5.png" id="20_wwv8t"]
+[ext_resource type="Texture2D" uid="uid://cj8gsfgguv36r" path="res://PNG/Other/plantBlue_4.png" id="21_2sy4f"]
+[ext_resource type="Texture2D" uid="uid://g3l2ad4xrjjj" path="res://PNG/Other/plantDark_4.png" id="22_rpg0f"]
+[ext_resource type="Texture2D" uid="uid://bk70fhf4b6d67" path="res://PNG/Other/plantTop_leaves.png" id="23_1p3al"]
+[ext_resource type="Texture2D" uid="uid://bfk6yo07vcstl" path="res://PNG/Other/plantDark_5.png" id="24_fcbwn"]
+[ext_resource type="Texture2D" uid="uid://c2k5t1lbrvao6" path="res://PNG/Other/plantDark_3.png" id="25_hm0w7"]
+[ext_resource type="Texture2D" uid="uid://dmjwcnkah55bt" path="res://PNG/Other/signArrow.png" id="26_hnbvg"]
+[ext_resource type="PackedScene" uid="uid://ihm7red1msxb" path="res://enemy.tscn" id="27_cm7mw"]
+[ext_resource type="Script" path="res://label_game_over.gd" id="29_imccx"]
+[ext_resource type="Script" path="res://enemies_timer.gd" id="30_khjwy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tnbnf"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[node name="game" type="Node2D"]
+position = Vector2(176, 1)
+script = ExtResource("1_q1mcn")
+metadata/_edit_vertical_guides_ = [-308.0, 1484.0, 575.0, 1152.0]
+metadata/_edit_horizontal_guides_ = [575.0, 480.0]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(400, 323)
+scale = Vector2(1.80078, 1.35)
+texture = ExtResource("1_xt4oa")
+metadata/_edit_group_ = true
+
+[node name="Set4Hills" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(-160.417, 62.963)
+scale = Vector2(0.556038, 0.740741)
+texture = ExtResource("2_br5ra")
+
+[node name="b_brown_right" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(150.13, -74.8148)
+scale = Vector2(0.531711, 0.691358)
+texture = ExtResource("3_m813y")
+
+[node name="b_beige_right" type="Sprite2D" parent="background"]
+z_index = 2
+position = Vector2(147.35, -78.5185)
+scale = Vector2(0.541485, 0.687114)
+texture = ExtResource("4_unv2r")
+
+[node name="Set3Hills" type="Sprite2D" parent="background"]
+z_index = 2
+position = Vector2(-165.977, 68.1481)
+scale = Vector2(0.556038, 0.740741)
+texture = ExtResource("5_ue6su")
+
+[node name="Set4Hills3" type="Sprite2D" parent="background"]
+z_index = 1
+position = Vector2(159.861, 62.963)
+scale = Vector2(0.556038, 0.740741)
+texture = ExtResource("2_br5ra")
+
+[node name="Set1Hills" type="Sprite2D" parent="background"]
+z_index = 2
+position = Vector2(155.413, 67.4074)
+scale = Vector2(0.556038, 0.740741)
+texture = ExtResource("6_2lrmg")
+
+[node name="b_brown_left" type="Sprite2D" parent="background"]
+position = Vector2(-169.592, -75.5556)
+scale = Vector2(0.467419, 0.682099)
+texture = ExtResource("3_m813y")
+
+[node name="b_beige_left" type="Sprite2D" parent="background"]
+position = Vector2(-172.858, -78.5185)
+scale = Vector2(0.458949, 0.683642)
+texture = ExtResource("7_aa7px")
+
+[node name="plants" type="Sprite2D" parent="background"]
+position = Vector2(-54.7697, 186.667)
+scale = Vector2(0.475322, 0.617284)
+texture = ExtResource("16_svv05")
+metadata/_edit_group_ = true
+
+[node name="PlantRed4" type="Sprite2D" parent="background/plants"]
+position = Vector2(14, -9)
+texture = ExtResource("17_xl0sy")
+
+[node name="PlantRed6" type="Sprite2D" parent="background/plants"]
+position = Vector2(310, -7.20001)
+scale = Vector2(0.935849, 0.816)
+texture = ExtResource("18_g6clm")
+
+[node name="PlantTopBlue" type="Sprite2D" parent="background/plants"]
+position = Vector2(479.623, 1.20001)
+scale = Vector2(0.490566, 0.488889)
+texture = ExtResource("19_5mkif")
+
+[node name="PlantGreen4" type="Sprite2D" parent="background/plants"]
+position = Vector2(219.632, -24)
+scale = Vector2(1.311, 1.344)
+texture = ExtResource("20_rrmyv")
+
+[node name="PlantGreen5" type="Sprite2D" parent="background/plants/PlantGreen4"]
+position = Vector2(0.223083, -29.4643)
+scale = Vector2(0.17955, 0.270706)
+texture = ExtResource("20_wwv8t")
+
+[node name="PlantBlue4" type="Sprite2D" parent="background/plants"]
+position = Vector2(436.34, -20.4)
+scale = Vector2(1.16981, 1.2)
+texture = ExtResource("21_2sy4f")
+
+[node name="PlantDark4" type="Sprite2D" parent="background/plants"]
+position = Vector2(-43.283, -19.2)
+scale = Vector2(1.16981, 1.2)
+texture = ExtResource("22_rpg0f")
+
+[node name="PlantTopLeaves" type="Sprite2D" parent="background/plants"]
+z_index = 1
+position = Vector2(-208.226, -4.79999)
+texture = ExtResource("23_1p3al")
+
+[node name="PlantDark5" type="Sprite2D" parent="background/plants"]
+position = Vector2(-208.226, -21.6)
+scale = Vector2(1.16981, 1.2)
+texture = ExtResource("24_fcbwn")
+
+[node name="PlantDark3" type="Sprite2D" parent="background/plants"]
+position = Vector2(689.019, -46.8)
+scale = Vector2(2.56713, 2.302)
+texture = ExtResource("25_hm0w7")
+
+[node name="player" type="CharacterBody2D" parent="."]
+z_index = 4
+position = Vector2(-51, 559)
+script = ExtResource("8_rmp1w")
+metadata/_edit_group_ = true
+
+[node name="PlayerRedDead" type="Sprite2D" parent="player"]
+texture = ExtResource("7_uw1ho")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
+polygon = PackedVector2Array(-19.5, 23, -7.3, 23, -5.3, 19, 5.3, 19, 7.3, 23, 19.5, 23, 19.5, -23, -19.5, -23)
+
+[node name="Area2D" type="Area2D" parent="player"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player/Area2D"]
+position = Vector2(0.499999, 0.500028)
+scale = Vector2(1.00962, 1.01902)
+polygon = PackedVector2Array(-19.5, 23, -7.3, 23, -5.3, 19, 5.3, 19, 7.3, 23, 19.5, 23, 19.5, -23, -19.5, -23)
+
+[node name="floor" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(107, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="floor2" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-149, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor2"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor2"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor2"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor2"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor2"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor2"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor2"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor2"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="floor3" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(363, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor3"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor3"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor3"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor3"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor3"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor3"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor3"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor3"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="floor4" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(619, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor4"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor4"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor4"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor4"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor4"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor4"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor4"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor4"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="floor5" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(875, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor5"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor5"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor5"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor5"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor5"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor5"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor5"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor5"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="floor6" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(1131, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor6"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor6"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor6"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor6"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor6"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor6"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor6"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor6"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="floor7" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(1387, 595)
+script = ExtResource("10_wp6oj")
+metadata/_edit_group_ = true
+
+[node name="TileBlue05" type="Sprite2D" parent="floor7"]
+z_index = 1
+position = Vector2(1, 21)
+texture = ExtResource("10_yl4sw")
+
+[node name="TileBrown02" type="Sprite2D" parent="floor7"]
+z_index = 1
+position = Vector2(-127, 21)
+texture = ExtResource("11_s7kq3")
+
+[node name="TileGreen05" type="Sprite2D" parent="floor7"]
+z_index = 1
+position = Vector2(-63, 21)
+texture = ExtResource("12_86083")
+
+[node name="TileYellow06" type="Sprite2D" parent="floor7"]
+z_index = 1
+position = Vector2(65, 21)
+texture = ExtResource("13_wf57c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor7"]
+position = Vector2(1, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="floor7"]
+position = Vector2(-127, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="floor7"]
+position = Vector2(-63, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="floor7"]
+position = Vector2(65, 21)
+polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
+
+[node name="enemy" parent="." instance=ExtResource("27_cm7mw")]
+
+[node name="SurpriseArrow" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-109, 559)
+texture = ExtResource("26_hnbvg")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SurpriseArrow"]
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 22.0
+offset_bottom = 11.0
+text = "GAY"
+
+[node name="LabelGameOver" type="Label" parent="."]
+z_index = 2
+offset_left = 219.0
+offset_top = 129.0
+offset_right = 555.0
+offset_bottom = 225.0
+text = "BORINOT!"
+label_settings = SubResource("LabelSettings_tnbnf")
+script = ExtResource("29_imccx")
+
+[node name="enemies_timer" type="Timer" parent="."]
+script = ExtResource("30_khjwy")
+
+[connection signal="area_entered" from="player/Area2D" to="player" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="player/Area2D" to="LabelGameOver" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="enemies_timer" to="." method="_on_enemies_timer_timeout"]
+[connection signal="timeout" from="enemies_timer" to="enemies_timer" method="_on_timeout"]
